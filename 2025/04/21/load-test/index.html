@@ -27,7 +27,7 @@
 <meta property="og:description" content="✅ 目的  Sauce Labs 上で Playwright テストを 300 並行実行 各アクセスに対して：  browser.newContext() を使い独立セッション作成 page.goto() にかかる時間（反応時間）を計測  結果をログ or ファイルに保存（CSVやJSON）   ✅ 前提条件  Sauce Labs アカウント Playwright のプロジェクト構成 Node.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-21T07:06:08.000Z">
-<meta property="article:modified_time" content="2025-05-21T07:06:42.692Z">
+<meta property="article:modified_time" content="2025-05-21T21:34:55.879Z">
 <meta property="article:author" content="BigFancy">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          648 words
+          1.1k words
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          6 mins
+          10 mins
         
       </span>
     
@@ -379,10 +379,127 @@ Playwright テストを接続します。</p>
 </tr>
 </tbody>
 </table>
+<p>画面反応時間に関わる主な要素（5カテゴリ）</p>
+<ol type="1">
+<li>ネットワーク（DNS, SSL, TTFB）</li>
+<li>サーバー処理（Apex, SOQL, API連携）</li>
+<li>フロントエンド（レンダリング, JS実行, リソース読み込み）</li>
+<li>UI構成（LWCの描画数・ロジック）</li>
+<li>外部条件（キャッシュ, セッション, ユーザー状態）</li>
+</ol>
+<p>以下に、Salesforce（特にExperience
+CloudやLWCを多用したポータル）の実環境において「<strong>画面反応時間に影響する上位5要素</strong>」を<strong>影響度が高い順に</strong>ランキング形式で解説します。</p>
 <hr>
-<p>必要があれば、<strong>CSV結果の自動分析スクリプト（Python）</strong>
-や <strong>GitHub
-Actionsとの統合</strong>、<strong>モバイルデバイスへの応用</strong>も対応可能です。希望されますか？</p>
+<h2 id="画面反応時間に影響する上位5要素">🏆
+画面反応時間に影響する上位5要素</h2>
+<h3 id="位apex処理サーバー処理">🥇1位：<strong>Apex処理（サーバー処理）</strong></h3>
+<ul>
+<li>複雑なロジックや大規模なSOQL、外部API連携がある場合、<strong>最も時間がかかる傾向</strong>があります。</li>
+<li>特に <code>@wire</code>
+による呼び出しが多い画面では、サーバー処理が終わるまでUIが描画されません。</li>
+<li><strong>遅い例</strong>：多階層の集計SOQL、ループ内SOQL、外部API呼び出し付きのApex</li>
+</ul>
+<hr>
+<h3 id="位リソース読み込み画像cssjs">🥈2位：<strong>リソース読み込み（画像・CSS・JS）</strong></h3>
+<ul>
+<li>Salesforceポータルはテーマやテンプレートに多くの静的リソースが含まれます。</li>
+<li>特に画像サイズが大きい／圧縮されていない／CDNキャッシュが外れると<strong>LCP（Largest
+Contentful Paint）に悪影響</strong>を与えます。</li>
+<li><strong>遅い例</strong>：ヒーローバナー、スライダー、動的読み込みのアイコン画像群</li>
+</ul>
+<hr>
+<h3 id="位javascript実行クライアント処理">🥉3位：<strong>JavaScript実行（クライアント処理）</strong></h3>
+<ul>
+<li>LWCコンポーネントはクライアントでのJS初期化が多く、<strong>DOM描画前にJSの依存関係が処理される</strong></li>
+<li>特に動的な描画（条件付き、for:eachなど）や、Apex応答に応じてUIを構築するタイプのコードでは影響が大きい</li>
+<li><strong>遅い例</strong>：多段階条件分岐、複雑な JSON
+パースと描画</li>
+</ul>
+<hr>
+<h3 id="位soqlクエリの性能サーバー処理の一部">🏅4位：<strong>SOQLクエリの性能（サーバー処理の一部）</strong></h3>
+<ul>
+<li>Apexの中でも特にSOQLクエリがボトルネックになりやすい。</li>
+<li>結果件数が多い、非選択リスト項目に対するフィルタ、インデックスなしのフィールド検索などは<strong>明確に遅くなる</strong></li>
+<li><strong>遅い例</strong>：複数の関連オブジェクトをJOINするようなクエリ</li>
+</ul>
+<hr>
+<h3 id="位lwcの描画数ロジックui構成">🎖5位：<strong>LWCの描画数・ロジック（UI構成）</strong></h3>
+<ul>
+<li>表示時に描画されるLWC数が多いと、それぞれのライフサイクルフック
+(<code>connectedCallback</code>, <code>renderedCallback</code>)
+が走る</li>
+<li>特に複雑な条件表示や for:each
+で大量のデータを表示する画面は描画遅延に直結する</li>
+<li><strong>遅い例</strong>：100件のレコードをリスト表示し、さらに各レコードにボタン/サブコンポーネントを持つ場合</li>
+</ul>
+<hr>
+<h2 id="想定外だったけどあまり重くない要素">⛳
+想定外だったけどあまり重くない要素</h2>
+<table>
+
+<thead>
+<tr>
+<th>要素</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS / SSL</td>
+<td>一度確立すれば基本的にキャッシュされる。初回アクセスを除き無視できる程度</td>
+</tr>
+<tr>
+<td>キャッシュ</td>
+<td>CDNが有効であればむしろ描画を高速化する</td>
+</tr>
+<tr>
+<td>セッション確立</td>
+<td>通常はSalesforceが高速に処理してくれる。ただし大量同時ログインは注意</td>
+</tr>
+<tr>
+<td>TTFB</td>
+<td>ApexやSOQLが速ければ自動的に短くなる傾向があるため、間接的な指標</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="まとめ上位5ランキング">✅ まとめ：上位5ランキング</h2>
+<table>
+<thead>
+<tr>
+<th>順位</th>
+<th>要素</th>
+<th>カテゴリ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥇1位</td>
+<td>Apex処理の遅延</td>
+<td>サーバー処理</td>
+</tr>
+<tr>
+<td>🥈2位</td>
+<td>リソース（画像・CSS）の読込遅延</td>
+<td>フロントエンド</td>
+</tr>
+<tr>
+<td>🥉3位</td>
+<td>JS実行負荷</td>
+<td>フロントエンド</td>
+</tr>
+<tr>
+<td>🏅4位</td>
+<td>SOQLクエリの最適化不足</td>
+<td>サーバー処理</td>
+</tr>
+<tr>
+<td>🎖5位</td>
+<td>LWCの描画数や条件ロジック</td>
+<td>UI構成</td>
+</tr>
+</tbody>
+</table>
 
                 
               </div>
