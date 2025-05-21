@@ -74,7 +74,12 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -227,15 +232,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/02/05/hello-world/" target="_self">
-          Hello World
+        <a href="/2025/04/21/load-test/" target="_self">
+          load-test
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/02/05/hello-world/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/21/load-test/" target="_self">
         <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+          ✅ 目的  Sauce Labs 上で Playwright テストを 300 並行実行 各アクセスに対して：  browser.newContext() を使い独立セッション作成 page.goto() にかかる時間（反応時間）を計測  結果をログ or ファイルに保存（CSVやJSON）   ✅ 前提条件  Sauce Labs アカウント Playwright のプロジェクト構成 Node.
         </div>
       </a>
 
@@ -243,12 +248,118 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-02-05 09:40" pubdate>
-              2025-02-05
+            <time datetime="2025-04-21 16:06" pubdate>
+              2025-04-21
             </time>
           </div>
         
         
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/02/09/BlockChain-Basic1/" target="_self">
+          BlockChain基础一
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/02/09/BlockChain-Basic1/" target="_self">
+        <div>
+          签名 签名的流程 sequenceDiagram     participant User as 用户     participant Wallet as Web3钱包     participant HashFunc as Keccak-256 哈希     participant ECDSA as ECDSA 签名     participant Blockchain as 区块链(可选)
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-02-09 14:34" pubdate>
+              2025-02-09
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/02/09/aave1/" target="_self">
+          aave1
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/02/09/aave1/" target="_self">
+        <div>
+          Aave借贷业务的时序图 sequenceDiagram     participant User as 用户     participant LP as LendingPool     participant ERC20 as ERC20代币合约     participant aToken as aToken合约     participant DebtToken as 债务代币合约
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-02-09 11:10" pubdate>
+              2025-02-09
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/03/12/salesforce1/" target="_self">
+          使用 VS Code 开发 Salesforce 的完整指南
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/12/salesforce1/" target="_self">
+        <div>
+          方法 3：授予用户访问权限 在 Salesforce Setup（设置）搜索 Profiles 找到 JWT 认证使用的 SalesforceUsername 所属的 Profile 在 Profile 设置中 确保 "API Enabled" 选项已启用 在 "Connected App Access" 部分，勾选你的 Connected App 保存 更改
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-03-12 09:59" pubdate>
+              2024-03-12
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/salesforce/">#salesforce</a>
+            
+          </div>
         
       </div>
     </article>
@@ -268,7 +379,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2024/02/05/uniswap/" target="_self">
         <div>
-          1234567891011121314151617181920212223242526import copy from &#x27;copy-to-clipboard&#x27;import &#123; useCallback, useEffect, useState &#125; from &#x27;react&#x27;export default function useCopyClip
+          1234567891011121314151617181920212223242526import copy from &#x27;copy-to-clipboard&#x27;import &#123; useCallback, useEffect, useState &#125; from &#x27;react&#x27;export default function useCopyCli
         </div>
       </a>
 
@@ -289,6 +400,50 @@
               <a href="/tags/web3/">#web3</a>
             
               <a href="/tags/defi/">#defi</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/02/05/dify-base/" target="_self">
+          dify base
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/02/05/dify-base/" target="_self">
+        <div>
+          models ERDiagram erDiagram     App &#123;         string id PK         string tenant_id FK         string name         string icon         string icon_background         string description         str
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-02-05 09:59" pubdate>
+              2024-02-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/dify/">#dify</a>
+            
+              <a href="/tags/ai/">#ai</a>
+            
+              <a href="/tags/ai-agent/">#ai-agent</a>
             
           </div>
         

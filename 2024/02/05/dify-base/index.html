@@ -19,25 +19,24 @@
   <meta name="author" content="BigFancy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1234567891011121314151617181920212223242526import copy from &#x27;copy-to-clipboard&#x27;import &#123; useCallback, useEffect, useState &#125; from &#x27;react&#x27;export default function useCopyCli">
+    <meta name="description" content="models ERDiagram erDiagram     App &#123;         string id PK         string tenant_id FK         string name         string icon         string icon_background         string description         str">
 <meta property="og:type" content="article">
-<meta property="og:title" content="uniswap">
-<meta property="og:url" content="http://example.com/2024/02/05/uniswap/index.html">
+<meta property="og:title" content="dify base">
+<meta property="og:url" content="http://example.com/2024/02/05/dify-base/index.html">
 <meta property="og:site_name" content="BigFancy">
-<meta property="og:description" content="1234567891011121314151617181920212223242526import copy from &#x27;copy-to-clipboard&#x27;import &#123; useCallback, useEffect, useState &#125; from &#x27;react&#x27;export default function useCopyCli">
+<meta property="og:description" content="models ERDiagram erDiagram     App &#123;         string id PK         string tenant_id FK         string name         string icon         string icon_background         string description         str">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2024/02/05/uniswap/2025-02-05-11-17-40.png">
 <meta property="article:published_time" content="2024-02-05T00:59:34.000Z">
-<meta property="article:modified_time" content="2025-02-05T04:08:15.673Z">
+<meta property="article:modified_time" content="2025-02-25T00:48:01.690Z">
 <meta property="article:author" content="BigFancy">
-<meta property="article:tag" content="web3">
-<meta property="article:tag" content="defi">
+<meta property="article:tag" content="dify">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="ai-agent">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/02/05/uniswap/2025-02-05-11-17-40.png">
   
   
   
-  <title>uniswap - BigFancy</title>
+  <title>dify base - BigFancy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -208,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="uniswap"></span>
+            <span id="subtitle" data-typed-text="dify base"></span>
           
         </div>
 
@@ -231,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          144 words
+          215 words
         
       </span>
     
@@ -279,14 +278,325 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">uniswap</h1>
+            <h1 id="seo-header">dify base</h1>
             
             
               <div class="markdown-body">
                 
-                <p><img src="/2024/02/05/uniswap/2025-02-05-11-17-40.png" srcset="/img/loading.gif" lazyload></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> copy <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;copy-to-clipboard&#x27;</span><br><span class="hljs-keyword">import</span> &#123; useCallback, useEffect, useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">useCopyClipboard</span>(<span class="hljs-params">timeout = <span class="hljs-number">500</span></span>): [<span class="hljs-built_in">boolean</span>, <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">toCopy</span>: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>] &#123;<br>  <span class="hljs-keyword">const</span> [isCopied, setIsCopied] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">false</span>)<br><br>  <span class="hljs-keyword">const</span> staticCopy = <span class="hljs-title function_">useCallback</span>(<span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span></span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> didCopy = <span class="hljs-title function_">copy</span>(text)<br>    <span class="hljs-title function_">setIsCopied</span>(didCopy)<br>  &#125;, [])<br><br>  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (isCopied) &#123;<br>      <span class="hljs-keyword">const</span> hide = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-title function_">setIsCopied</span>(<span class="hljs-literal">false</span>)<br>      &#125;, timeout)<br><br>      <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-built_in">clearTimeout</span>(hide)<br>      &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span><br>  &#125;, [isCopied, setIsCopied, timeout])<br><br>  <span class="hljs-keyword">return</span> [isCopied, staticCopy]<br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> copy <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;copy-to-clipboard&#x27;</span><br><span class="hljs-keyword">import</span> &#123; useCallback, useEffect, useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">useCopyClipboard</span>(<span class="hljs-params">timeout = <span class="hljs-number">500</span></span>): [<span class="hljs-built_in">boolean</span>, <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">toCopy</span>: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>] &#123;<br>  <span class="hljs-keyword">const</span> [isCopied, setIsCopied] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">false</span>)<br><br>  <span class="hljs-keyword">const</span> staticCopy = <span class="hljs-title function_">useCallback</span>(<span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span></span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> didCopy = <span class="hljs-title function_">copy</span>(text)<br>    <span class="hljs-title function_">setIsCopied</span>(didCopy)<br>  &#125;, [])<br><br>  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (isCopied) &#123;<br>      <span class="hljs-keyword">const</span> hide = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-title function_">setIsCopied</span>(<span class="hljs-literal">false</span>)<br>      &#125;, timeout)<br><br>      <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-built_in">clearTimeout</span>(hide)<br>      &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span><br>  &#125;, [isCopied, setIsCopied, timeout])<br><br>  <span class="hljs-keyword">return</span> [isCopied, staticCopy]<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="models-erdiagram">models ERDiagram</h1>
+<pre><code class=" mermaid">erDiagram
+    App &#123;
+        string id PK
+        string tenant_id FK
+        string name
+        string icon
+        string icon_background
+        string description
+        string mode
+        string status
+        boolean is_demo
+        boolean is_public
+        boolean is_pinned
+        string api_base_url
+        string api_key
+        string site_url
+        string copyright
+        string privacy_policy
+        string custom_disclaimer
+        string language
+        datetime created_at
+        datetime updated_at
+    &#125;
+    
+    AppModelConfig &#123;
+        string id PK
+        string app_id FK
+        string opening_statement
+        string suggested_questions
+        string suggested_questions_after_answer
+        string speech_to_text
+        string text_to_speech
+        string more_like_this
+        string sensitive_word_avoidance
+        string external_data_tools
+        string model
+        string user_input_form
+        string dataset_query_variable
+        string pre_prompt
+        string agent_mode
+        string retriever_resource
+        string prompt_type
+        string chat_prompt_config
+        string completion_prompt_config
+        string dataset_configs
+        string file_upload
+    &#125;
+    
+    RecommendedApp &#123;
+        string id PK
+        string app_id FK
+        json description
+        string copyright
+        string privacy_policy
+        string custom_disclaimer
+        string category
+        int position
+        boolean is_listed
+        int install_count
+        string language
+        datetime created_at
+        datetime updated_at
+    &#125;
+    
+    InstalledApp &#123;
+        string id PK
+        string tenant_id FK
+        string app_id FK
+        string app_owner_tenant_id
+        int position
+        boolean is_pinned
+        datetime last_used_at
+        datetime created_at
+    &#125;
+    
+    Conversation &#123;
+        string id PK
+        string app_id FK
+        string app_model_config_id FK
+        string model_provider
+        string override_model_configs
+        string model_id
+        string mode
+        string name
+        string summary
+        json inputs
+        string introduction
+        string system_instruction
+        int system_instruction_tokens
+        string status
+        string invoke_from
+        string from_source
+        string from_end_user_id FK
+        string from_account_id FK
+        datetime read_at
+        string read_account_id
+        int dialogue_count
+        datetime created_at
+        datetime updated_at
+        boolean is_deleted
+    &#125;
+    
+    Message &#123;
+        string id PK
+        string app_id FK
+        string model_provider
+        string model_id
+        string override_model_configs
+        string conversation_id FK
+        json inputs
+        string query
+        json message
+        int message_tokens
+        decimal message_unit_price
+        decimal message_price_unit
+        string answer
+        int answer_tokens
+        decimal answer_unit_price
+        decimal answer_price_unit
+        string parent_message_id
+        float provider_response_latency
+        decimal total_price
+        string currency
+        string status
+        string error
+        string message_metadata
+        string invoke_from
+        string from_source
+        string from_end_user_id FK
+        string from_account_id FK
+        datetime created_at
+        datetime updated_at
+        boolean agent_based
+        string workflow_run_id FK
+    &#125;
+    
+    MessageFeedback &#123;
+        string id PK
+        string app_id FK
+        string conversation_id FK
+        string message_id FK
+        string rating
+        string content
+        string from_source
+        string from_end_user_id FK
+        string from_account_id FK
+        datetime created_at
+        datetime updated_at
+    &#125;
+    
+    MessageFile &#123;
+        string id PK
+        string message_id FK
+        string type
+        string transfer_method
+        string url
+        string belongs_to
+        string upload_file_id
+        string created_by_role
+        string created_by FK
+        datetime created_at
+    &#125;
+    
+    MessageAnnotation &#123;
+        string id PK
+        string app_id FK
+        string conversation_id FK
+        string message_id FK
+        string question
+        string content
+        int hit_count
+        string account_id FK
+        datetime created_at
+        datetime updated_at
+    &#125;
+    
+    App ||--o&#123; AppModelConfig : &quot;has&quot;
+    App ||--o&#123; RecommendedApp : &quot;is recommended as&quot;
+    App ||--o&#123; InstalledApp : &quot;is installed as&quot;
+    App ||--o&#123; Conversation : &quot;has&quot;
+    App ||--o&#123; Message : &quot;contains&quot;
+    App ||--o&#123; MessageFeedback : &quot;receives&quot;
+    App ||--o&#123; MessageAnnotation : &quot;has&quot;
+    
+    AppModelConfig ||--o&#123; Conversation : &quot;configures&quot;
+    
+    Conversation ||--o&#123; Message : &quot;contains&quot;
+    Conversation ||--o&#123; MessageAnnotation : &quot;has&quot;
+    
+    Message ||--o&#123; MessageFeedback : &quot;receives&quot;
+    Message ||--o&#123; MessageFile : &quot;has&quot;
+    Message ||--o&#123; MessageAnnotation : &quot;has&quot;
+</code></pre>
+<pre><code class=" mermaid">erDiagram
+    App &#123;
+        string id PK
+        string name
+        string description
+        string mode
+        boolean is_public
+        boolean is_demo
+        string status
+    &#125;
+    
+    RecommendedApp &#123;
+        string id PK
+        string app_id FK
+        json description
+        string copyright
+        string privacy_policy
+        string category
+        int position
+        boolean is_listed
+        int install_count
+        string language
+    &#125;
+    
+    Dataset &#123;
+        string id PK
+        string tenant_id FK
+        string name
+        string description
+        string provider
+        string permission
+        string data_source_type
+        string indexing_technique
+        string index_struct
+        string created_by FK
+        datetime created_at
+        string updated_by FK
+        datetime updated_at
+        string embedding_model
+        string embedding_model_provider
+        string collection_binding_id
+        json retrieval_model
+    &#125;
+    
+    DatasetProcessRule &#123;
+        string id PK
+        string dataset_id FK
+        string mode
+        string rules
+        string created_by FK
+        datetime created_at
+    &#125;
+    
+    Document &#123;
+        string id PK
+        string tenant_id FK
+        string dataset_id FK
+        int position
+        string data_source_type
+        string data_source_info
+        string dataset_process_rule_id FK
+        string batch
+        string name
+        string created_from
+        string created_by FK
+        datetime created_at
+        string indexing_status
+        boolean enabled
+        boolean archived
+        int word_count
+        int tokens
+        string doc_type
+        json doc_metadata
+        string doc_form
+        string doc_language
+    &#125;
+    
+    DocumentSegment &#123;
+        string id PK
+        string tenant_id FK
+        string dataset_id FK
+        string document_id FK
+        int position
+        string content
+        string answer
+        int word_count
+        int tokens
+        string status
+        int hit_count
+        string index_node_id
+        string index_node_hash
+        boolean enabled
+        datetime created_at
+        datetime updated_at
+    &#125;
+    
+    DatasetKeywordTable &#123;
+        string id PK
+        string dataset_id FK
+        string keyword
+        string created_by FK
+        datetime created_at
+    &#125;
+    
+    AppDatasetJoin &#123;
+        string id PK
+        string app_id FK
+        string dataset_id FK
+        datetime created_at
+    &#125;
+    
+    App ||--o&#123; RecommendedApp : &quot;is recommended as&quot;
+    App ||--o&#123; AppDatasetJoin : &quot;uses&quot;
+    Dataset ||--o&#123; AppDatasetJoin : &quot;is used by&quot;
+    Dataset ||--o&#123; Document : &quot;contains&quot;
+    Dataset ||--o&#123; DocumentSegment : &quot;has segments&quot;
+    Dataset ||--o&#123; DatasetProcessRule : &quot;has rules&quot;
+    Dataset ||--o&#123; DatasetKeywordTable : &quot;has keywords&quot;
+    Document ||--o&#123; DocumentSegment : &quot;is divided into&quot;
+</code></pre>
 
                 
               </div>
@@ -299,9 +609,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/web3/" class="print-no-link">#web3</a>
+        <a href="/tags/dify/" class="print-no-link">#dify</a>
       
-        <a href="/tags/defi/" class="print-no-link">#defi</a>
+        <a href="/tags/ai/" class="print-no-link">#ai</a>
+      
+        <a href="/tags/ai-agent/" class="print-no-link">#ai-agent</a>
       
     </div>
   
@@ -313,8 +625,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>uniswap</div>
-      <div>http://example.com/2024/02/05/uniswap/</div>
+      <div>dify base</div>
+      <div>http://example.com/2024/02/05/dify-base/</div>
     </div>
     <div class="license-meta">
       
@@ -358,21 +670,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/12/salesforce1/" title="使用 VS Code 开发 Salesforce 的完整指南">
+                      <a href="/2024/02/05/uniswap/" title="uniswap">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用 VS Code 开发 Salesforce 的完整指南</span>
+                        <span class="hidden-mobile">uniswap</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2024/02/05/dify-base/" title="dify base">
-                        <span class="hidden-mobile">dify base</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
@@ -427,6 +733,27 @@
 
   
 
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"forest"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 
@@ -618,6 +945,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
