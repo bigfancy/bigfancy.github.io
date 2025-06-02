@@ -27,7 +27,7 @@
 <meta property="og:description" content="Sauce Labs と AWS  🧪 Sauce Labs と AWS 自前環境の比較（Playwright 実行）     比較項目 Sauce Labs AWS 自前構築     🛠️ 設定の難易度 ✅ すぐに使える、ほぼ設定不要 ❌ OS、Node、ブラウザ、Playwright、CI&#x2F;CD など手動設定必要   📦 Playwright 対応 ✅ Playwright 対応済み、複">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-26T10:56:49.000Z">
-<meta property="article:modified_time" content="2025-05-27T11:49:58.661Z">
+<meta property="article:modified_time" content="2025-06-02T13:28:20.681Z">
 <meta property="article:author" content="BigFancy">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k words
+          1.6k words
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          13 mins
+          14 mins
         
       </span>
     
@@ -566,6 +566,8 @@ cookie）</h2>
 <hr>
 <p>如果你需要这个完整项目作为 <code>.zip</code> 文件或者 GitHub
 模板，我可以立即帮你生成。是否需要？</p>
+<h1 id="play-wright">play wright</h1>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs csharp">import &#123; test, expect &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@playwright/test&#x27;</span>;<br><br>test(<span class="hljs-string">&#x27;set lightning-combobox value&#x27;</span>, <span class="hljs-keyword">async</span> (&#123; page &#125;) =&gt; &#123;<br>  <span class="hljs-keyword">await</span> page.<span class="hljs-keyword">goto</span>(<span class="hljs-string">&#x27;https://your-salesforce-instance.com&#x27;</span>);<br><br>  <span class="hljs-comment">// Open the shadow-root-based combobox</span><br>  <span class="hljs-keyword">const</span> comboInput = page.locator(<span class="hljs-string">&#x27;lightning-combobox &gt;&gt;&gt; [role=&quot;combobox&quot;]&#x27;</span>);<br>  <span class="hljs-keyword">await</span> comboInput.click();<br><br>  <span class="hljs-comment">// Select option (e.g., data-value=&quot;option1&quot;)</span><br>  <span class="hljs-keyword">const</span> option = page.locator(<span class="hljs-string">&#x27;lightning-combobox &gt;&gt;&gt; [role=&quot;option&quot;][data-value=&quot;option1&quot;]&#x27;</span>);<br>  <span class="hljs-keyword">await</span> option.click();<br><br>  <span class="hljs-comment">// Optional: verify selected text</span><br>  <span class="hljs-keyword">const</span> selectedText = <span class="hljs-keyword">await</span> comboInput.inputValue();<br>  expect(selectedText).toBe(<span class="hljs-string">&#x27;Option 1&#x27;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
 
                 
               </div>
