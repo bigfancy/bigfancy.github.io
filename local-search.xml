@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>cursor</title>
+    <link href="/2025/06/15/cursor/"/>
+    <url>/2025/06/15/cursor/</url>
+    
+    <content type="html"><![CDATA[<h1 id="cursor-tips">cursor tips</h1><p>Using Cursor well = fast, clean code.</p><p>Using it wrong = AI spaghetti you’ll be cleaning up all week.</p><p>Here’s how to actually use it right:</p><ol type="1"><li><p>Set 5-10 clear project rules upfront so Cursor knows yourstructure and constraints. Try /generate rules for existingcodebases.</p></li><li><p>Be specific in prompts. Spell out tech stack, behavior, andconstraints like a mini spec.</p></li><li><p>Work file by file; generate, test, and review in small, focusedchunks.</p></li><li><p>Write tests first, lock them, and generate code until all testspass.</p></li><li><p>Always review AI output and hard‑fix anything that breaks, thentell Cursor to use them as examples.</p></li><li><p>Use @ file, @ folders, @ git to scope Cursor’s attention to theright parts of your codebase.</p></li><li><p>Keep design docs and checklists in .cursor/ so the agent has fullcontext on what to do next.</p></li><li><p>If code is wrong, just write it yourself. Cursor learns fasterfrom edits than explanations.</p></li><li><p>Use chat history to iterate on old prompts without startingover.</p></li><li><p>Choose models intentionally. Gemini for precision, Claude forbreadth.</p></li><li><p>In new or unfamiliar stacks, paste in link to documentation. MakeCursor explain all errors and fixes line by line.</p></li></ol><p>12.Let big projects index overnight and limit context scope to keepperformance snappy.</p><p>Structure and control wins (for now)</p><p>Treat Cursor agent like a powerful junior — it can go far, fast, ifyou show it the way.</p><h1 id="frontend">frontend</h1><p>前端技术的热门组合</p><p>React tailwind Montion Radix UI</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>load-test1</title>
     <link href="/2025/05/26/load-test1/"/>
     <url>/2025/05/26/load-test1/</url>
@@ -60,7 +73,7 @@
     <link href="/2024/03/12/salesforce1/"/>
     <url>/2024/03/12/salesforce1/</url>
     
-    <content type="html"><![CDATA[<p>方法 3：授予用户访问权限 在 Salesforce Setup（设置）搜索 Profiles找到 JWT 认证使用的 SalesforceUsername 所属的 Profile 在 Profile 设置中确保 "API Enabled" 选项已启用 在 "Connected App Access" 部分，勾选你的Connected App 保存 更改</p>]]></content>
+    <content type="html"><![CDATA[<p>方法 3：授予用户访问权限 在 Salesforce Setup（设置）搜索 Profiles找到 JWT 认证使用的 SalesforceUsername 所属的 Profile 在 Profile 设置中确保 "API Enabled" 选项已启用 在 "Connected App Access" 部分，勾选你的Connected App 保存 更改</p><h1 id="add-multi-users">add multi users</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;User&gt; users = <span class="hljs-keyword">new</span> <span class="hljs-title class_">List</span>&lt;User&gt;();<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">Integer</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) &#123;<br>    users.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<br>        FirstName = <span class="hljs-string">&#x27;Test&#x27;</span>,<br>        LastName = <span class="hljs-string">&#x27;User&#x27;</span> + i,<br>        Alias = <span class="hljs-string">&#x27;test&#x27;</span> + i,<br>        Email = <span class="hljs-string">&#x27;testuser&#x27;</span> + i + <span class="hljs-string">&#x27;@example.com&#x27;</span>,<br>        Username = <span class="hljs-string">&#x27;testuser&#x27;</span> + i + <span class="hljs-string">&#x27;@example.com.sandbox&#x27;</span>,<br>        TimeZoneSidKey = <span class="hljs-string">&#x27;Asia/Tokyo&#x27;</span>,<br>        LocaleSidKey = <span class="hljs-string">&#x27;ja_JP&#x27;</span>,<br>        EmailEncodingKey = <span class="hljs-string">&#x27;ISO-2022-JP&#x27;</span>,<br>        LanguageLocaleKey = <span class="hljs-string">&#x27;ja&#x27;</span>,<br>        ProfileId = [SELECT Id FROM Profile <span class="hljs-type">WHERE</span> <span class="hljs-variable">Name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Standard User&#x27;</span> LIMIT <span class="hljs-number">1</span>].Id<br>    ));<br>&#125;<br><br>insert users;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
