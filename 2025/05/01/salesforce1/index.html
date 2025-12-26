@@ -27,7 +27,7 @@
 <meta property="og:description" content="Base トランザクション 原則として、1つの Apex クラスの実行＝1トランザクションです。ただし、ある条件下では1つの Apex クラスの中から 「複数のトランザクションを発生させることができます」。 以下の非同期処理で複数のトランザクションが発生します。 Queueable を使用 12System.enqueueJob(new MyQueueableClass()); Batch Ape">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-01T00:59:34.000Z">
-<meta property="article:modified_time" content="2025-12-24T10:40:59.685Z">
+<meta property="article:modified_time" content="2025-12-26T00:19:04.238Z">
 <meta property="article:author" content="BigFancy">
 <meta property="article:tag" content="salesforce">
 <meta name="twitter:card" content="summary_large_image">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          408 words
+          541 words
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          4 mins
+          5 mins
         
       </span>
     
@@ -296,6 +296,41 @@
 <p><a target="_blank" rel="noopener" href="https://qiita.com/nmatsuo63?page=1">Nao</a></p>
 <h2 id="manifest">manifest</h2>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">Package</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://soap.sforce.com/2006/04/metadata&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- Code --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ApexClass<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ApexTrigger<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>LightningComponentBundle<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ApexPage<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ApexComponent<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- Automation --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>Flow<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ValidationRule<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- Security (prefer PermissionSets over Profiles) --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>PermissionSet<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>PermissionSetGroup<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- Data model --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>CustomObject<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- Config-as-code --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>CustomMetadata<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- Integration --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>NamedCredential<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>RemoteSiteSetting<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- UI labels (optional) --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">members</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">members</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>CustomLabel<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>60.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">Package</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="gitea-sf運用">gitea-sf運用</h1>
+<ul>
+<li>開発</li>
+</ul>
+<ol type="1">
+<li>開発者がDEV Sandboxで作業</li>
+<li>DEV Sandbox → ローカルへ pull</li>
+<li>Giteaへ commit git checkout dev git add . git commit -m "initial
+commit" git push origin dev</li>
+</ol>
+<ul>
+<li><p>テスト git checkout dev sfdx force:source:deploy -u test</p></li>
+<li><p>本番リリース git checkout main git merge dev git push origin
+main</p></li>
+</ul>
+<p>merge request</p>
+<p>sfdx force:source:deploy -u Production</p>
+<p>git tag release-2025-01 git push origin --tags</p>
+<p>main：直接push禁止（管理者のみ） dev：開発者push可</p>
+<ul>
+<li>DEV Sandboxを複数人で安全に回す運用 git checkout dev git pull origin
+dev git checkout -b feature/userA-api-fix</li>
+</ul>
+<p>sfdx force:source:pull -u DevSandbox git status git add . git commit
+-m "外部API疎通対応" git push origin feature/userA-api-fix</p>
+<p>develop にマージ git checkout dev git merge feature/userA-api-fix git
+push origin dev</p>
+<p>DEV Sandboxを「正しい状態」に戻す sfdx force:source:deploy -u
+DevSandbox</p>
+<p>DEV Sandbox = dev</p>
+<p>衝突（コンフリクト）が起きたらどうする？
+結論：Gitで解決する。Sandboxで直さない。</p>
+<p>sfdx-git-deltaを使ってgit 差分だけをdeploy
+sfdx-git-deltaでリリースパッケージを作成しよう
+https://qiita.com/takaHAL/items/37536ab1345b5137389d</p>
 
                 
               </div>
